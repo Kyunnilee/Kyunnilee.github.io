@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Check out our new paper [Generate, but Verify: Reducing Visual Hallucination in Vision-Language Models with Retrospective Resampling](https://reverse-vlm.github.io)! Link to X: [@reverse_vlm](https://x.com/tsunghan_wu/status/1913319463078019289).
+🔥 Check out our new paper [Generate, but Verify: Reducing Visual Hallucination in Vision-Language Models with Retrospective Resampling](https://reverse-vlm.github.io)! Link to X: [@reverse_vlm](https://x.com/tsunghan_wu/status/1913319463078019289).

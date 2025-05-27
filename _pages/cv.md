@@ -2,7 +2,6 @@
 layout: cv
 permalink: /cv/
 title: cv
-nav: true
-nav_order: 5
+nav: false
 cv_pdf: cv_0527_2025.pdf # you can also use external links here
 ---
