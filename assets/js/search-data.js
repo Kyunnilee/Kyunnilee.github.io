@@ -37,13 +37,6 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/repositories/";
           },
-        },{id: "nav-cv",
-          title: "cv",
-          description: "",
-          section: "Navigation",
-          handler: () => {
-            window.location.href = "/cv/";
-          },
         },{id: "nav-teaching",
           title: "teaching",
           description: "Materials for courses you taught. Replace this text with your description.",
@@ -440,20 +433,13 @@ ninja.data = [{
           description: "",
           section: "Books",handler: () => {
               window.location.href = "/books/the_godfather/";
-            },},{id: "news-a-long-announcement-with-details",
-          title: 'A long announcement with details',
-          description: "",
-          section: "News",handler: () => {
-              window.location.href = "/news/announcement_2/";
             },},{id: "news-check-out-our-new-paper-generate-but-verify-reducing-visual-hallucination-in-vision-language-models-with-retrospective-resampling-link-to-x-reverse-vlm",
-          title: 'Check out our new paper Generate, but Verify: Reducing Visual Hallucination in Vision-Language...',
+          title: '🔥 Check out our new paper Generate, but Verify: Reducing Visual Hallucination in...',
           description: "",
-          section: "News",},{id: "news-announcement-3",
-          title: 'Announcement_3',
+          section: "News",},{id: "news-i-finished-my-fall-2024-spring-2025-exchange-program-at-university-california-berkeley",
+          title: 'I finished my Fall 2024, Spring 2025 exchange program at University California, Berkeley!...',
           description: "",
-          section: "News",handler: () => {
-              window.location.href = "/news/announcement_3/";
-            },},{id: "projects-project-1",
+          section: "News",},{id: "projects-project-1",
           title: 'project 1',
           description: "with background image",
           section: "Projects",handler: () => {
