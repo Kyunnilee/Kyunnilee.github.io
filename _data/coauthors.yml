@@ -1,34 +1,24 @@
-"adams":
-  - firstname: ["Edwin", "E.", "E. P.", "Edwin Plimpton"]
-    url: https://en.wikipedia.org/wiki/Edwin_Plimpton_Adams
+"Wu":
+  - firstname: ["Tsung-Han", "TsungHan", "T. H."]
+    url: https://tsunghan-wu.github.io/
 
-"podolsky":
-  - firstname: ["Boris", "B.", "B. Y.", "Boris Yakovlevich"]
-    url: https://en.wikipedia.org/wiki/Boris_Podolsky
+"Ge":
+  - firstname: ["Jiaxin"]
+    url: https://jiaxin.ge
 
-"rosen":
-  - firstname: ["Nathan", "N."]
-    url: https://en.wikipedia.org/wiki/Nathan_Rosen
+"Gonzalez":
+  - firstname: ["Joseph", "Joseph E.", "J. E.", "Joseph E. Gonzalez"]
+    url: https://people.eecs.berkeley.edu/~jegonzal/
 
-"bach":
-  - firstname: ["Johann Sebastian", "J. S."]
-    url: https://en.wikipedia.org/wiki/Johann_Sebastian_Bach
+"Darrell":
+  - firstname: ["Trevor"]
+    url: https://people.eecs.berkeley.edu/~trevor/
 
-  - firstname: ["Carl Philipp Emanuel", "C. P. E."]
-    url: https://en.wikipedia.org/wiki/Carl_Philipp_Emanuel_Bach
+"Chan":
+  - firstname: ["David", "David M.", "David M. Chan"]
+    url: https://dchan.cc/
 
-"przibram":
-  - firstname: ["Karl"]
-    url: https://link.springer.com/article/10.1007/s00016-019-00242-z
-
-"schrodinger":
-  - firstname: ["Erwin"]
-    url: https://en.wikipedia.org/wiki/Erwin_Schr%C3%B6dinger
-
-"lorentz":
-  - firstname: ["Hendrik Antoon"]
-    url: https://en.wikipedia.org/wiki/Hendrik_Lorentz
-
-"planck":
-  - firstname: ["Max"]
-    url: https://en.wikipedia.org/wiki/Max_Planck
+"Kang":
+  - firstname: ["Joshua", "Joshua Minwoo", "Minwoo"]
+    url: https://joshuaminwookang.github.io/
+  
