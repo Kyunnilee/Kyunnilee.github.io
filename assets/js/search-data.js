@@ -30,13 +30,6 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/projects/";
           },
-        },{id: "nav-cv",
-          title: "cv",
-          description: "",
-          section: "Navigation",
-          handler: () => {
-            window.location.href = "/cv/";
-          },
         },{id: "post-a-post-with-plotly-js",
         
           title: "a post with plotly.js",
@@ -411,6 +404,9 @@ ninja.data = [{
           section: "News",},{id: "news-i-finished-my-fall-2024-spring-2025-exchange-program-at-university-california-berkeley",
           title: 'I finished my Fall 2024, Spring 2025 exchange program at University California, Berkeley!...',
           description: "",
+          section: "News",},{id: "news-my-first-paper-is-out-puzzled-by-puzzles-when-vision-language-models-can-t-take-a-hint-https-github-com-kyunnilee-visual-puzzles-follow-this-thread-visual-puzzles-https-x-com-annele222-status-1928522425869775296",
+          title: '🧩 My **first paper** is out! [Puzzled by Puzzles: When Vision-Language Models Can’t...',
+          description: "",
           section: "News",},{id: "projects-project-1",
           title: 'project 1',
           description: "with background image",
@@ -476,13 +472,6 @@ ninja.data = [{
         section: 'Socials',
         handler: () => {
           window.open("https://www.linkedin.com/in/heekyung-lee-624753289", "_blank");
-        },
-      },{
-        id: 'social-rss',
-        title: 'RSS Feed',
-        section: 'Socials',
-        handler: () => {
-          window.open("/feed.xml", "_blank");
         },
       },{
         id: 'social-x',
