@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-I finished my Fall 2024, Spring 2025 exchange program at University California, Berkeley! 🐻
+I finished my Fall 2024, Spring 2025 exchange program at University California, Berkeley 🐻

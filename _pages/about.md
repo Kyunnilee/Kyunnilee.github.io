@@ -25,7 +25,7 @@ latest_posts:
 
 Hi! I am Heekyung(Anne) Lee. I am an Undergraduate Student in Computer Science at [POSTECH](https://www.postech.ac.kr/eng/), South Korea. I am also an undergraduate researcher at [Berkeley AI Research (BAIR)](https://bair.berkeley.edu/), fortunate to be supervised under [Prof. Trevor Darrell](https://people.eecs.berkeley.edu/~trevor/)'s group.
 
-I am interested in various topics in <b>Computer Vision</b> and <b>NLP</b>, with a particular focus on their applications in <b>Vision Language Models</b>, including <b>Image Captioning</b> and <b>Visual Question Answering</b> tasks.
+I am interested in various topics in <b>Computer Vision</b> and <b>NLP</b>, especially on their applications in <b>Vision Language Models</b>, including <b>Image Captioning</b> and <b>Visual Question Answering</b> tasks.
 
 My recent research interests are on <b>Multi-Modal Language Models</b>. 
 <ul>
