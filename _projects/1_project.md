@@ -1,81 +1,65 @@
 ---
 layout: page
-title: project 1
-description: with background image
-img: assets/img/12.jpg
+title: Cheese Touch! A Temperature-Dependent Simulation of Melting Cheese
+description: A visually compelling and physically accurate simulation of melting cheese using particle systems and rendering techniques.
+img: assets/img/1.jpg
 importance: 1
 category: work
-related_publications: true
+related_publications: false
 ---
 
-Every project has a beautiful feature showcase page.
-It's easy to include images in a flexible 3-column grid format.
-Make your photos 1/3, 2/3, or full width.
-
-To give your project a background in the portfolio page, just add the img tag to the front matter like so:
-
-    ---
-    layout: page
-    title: project
-    description: a project with a background image
-    img: /assets/img/12.jpg
-    ---
-
 <div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/1.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/3.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    Caption photos easily. On the left, a road goes through a tunnel. Middle, leaves artistically fall in a hipster photoshoot. Right, in another hipster photoshoot, a lumberjack grasps a handful of pine needles.
-</div>
-<div class="row">
-    <div class="col-sm mt-3 mt-md-0">
-        {% include figure.liquid loading="eager" path="assets/img/5.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    This image can also have a caption. It's like magic.
-</div>
-
-You can also put regular text between your rows of images, even citations {% cite einstein1950meaning %}.
-Say you wanted to write a bit about your project before you posted the rest of the images.
-You describe how you toiled, sweated, _bled_ for your project, and then... you reveal its glory in the next row of images.
-
-<div class="row justify-content-sm-center">
-    <div class="col-sm-8 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-    <div class="col-sm-4 mt-3 mt-md-0">
-        {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-    </div>
-</div>
-<div class="caption">
-    You can also have artistically styled 2/3 + 1/3 images, like these.
-</div>
-
-The code is simple.
-Just wrap your images with `<div class="col-sm">` and place them inside `<div class="row">` (read more about the <a href="https://getbootstrap.com/docs/4.4/layout/grid/">Bootstrap Grid</a> system).
-To make images responsive, add `img-fluid` class to each; for rounded corners and shadows use `rounded` and `z-depth-1` classes.
-Here's the code for the last row of images above:
-
-{% raw %}
-
-```html
-<div class="row justify-content-sm-center">
-  <div class="col-sm-8 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/6.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
-  </div>
-  <div class="col-sm-4 mt-3 mt-md-0">
-    {% include figure.liquid path="assets/img/11.jpg" title="example image" class="img-fluid rounded z-depth-1" %}
+  <div class="col-sm mt-3 mt-md-0">
+    {% include figure.liquid loading="eager" path="assets/img/1.jpg" title="Teaser image of cheese melting simulation" class="img-fluid rounded z-depth-1" %}
   </div>
 </div>
-```
 
-{% endraw %}
+<div class="caption">
+  Teaser image showing realistic cheese melting rendered using surfel texturing and marching cubes surface reconstruction.
+</div>
+
+## Project Overview
+
+This final project implements a temperature-dependent cheese simulation that mimics realistic melting behavior. Our project combines a particle-based deformation system (phyxels), surface reconstruction via marching cubes, and surfel-based rendering for visual detail.
+
+We aimed to capture both the physical plausibility and visual aesthetics of cheese melting, including:
+
+- Elastic and plastic deformation behavior
+- Heat propagation through particles
+- Surface geometry evolution using marching cubes
+- Texture and shading details via surfels
+
+## Features
+
+<div class="row">
+  <div class="col-sm mt-3 mt-md-0">
+    {% include figure.liquid loading="eager" path="assets/img/1.jpg" title="Surface grid and volume layout" class="img-fluid rounded z-depth-1" %}
+  </div>
+  <div class="col-sm mt-3 mt-md-0">
+    {% include figure.liquid loading="eager" path="assets/img/1.jpg" title="Rendering pipeline with surfels" class="img-fluid rounded z-depth-1" %}
+  </div>
+</div>
+
+<div class="caption">
+  Left: The grid layout of the cheese volume with heating zones. Right: The surfel rendering pipeline for surface and shading details.
+</div>
+
+## Core Implementation Highlights
+
+- **Phyxels (Physical Particles):** Each cheese volume is modeled as a grid of particles with spring-like forces, simulating elastic and melting behavior.
+- **Heat Propagation:** Heat is simulated via a scalar field over time, affecting the deformation of particles.
+- **Marching Cubes Surface Extraction:** The dynamic cheese surface is reconstructed frame-by-frame.
+- **Surfel Rendering:** We used surfels to add texture and shading, giving the cheese a soft, detailed appearance.
+
+## Reflections
+
+This project was both technically and artistically fulfilling. We explored simulation stability, volume-based rendering, and surfel shading from research papers, including:
+
+- *Point-Based Animation of Elastic, Plastic, and Melting Objects*
+- *Surfels: Surface Elements as Rendering Primitives*
+
+## Team
+
+This project was developed by Heekyung Lee and Jaewon Hur as part of CS 184/284A: Foundations of Computer Graphics at UC Berkeley.
+
+You can view the full interactive webpage [here](https://cal-cs184-student.github.io/hw-webpages-jaewonheekyung/final_project/index.html).
