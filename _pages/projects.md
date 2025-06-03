@@ -2,7 +2,7 @@
 layout: page
 title: projects
 permalink: /projects/
-description: Welcome to my project page! Some cool and fun projects I have worked on during my studies!
+description: Welcome to my project page! Some cool and fun projects I have worked on during my studies.
 nav: true
 nav_order: 3
 display_categories: [work, fun]

@@ -5,11 +5,11 @@ permalink: /
 
 profile:
   align: right
-  image: prof_pic.jpg
+  image: prof_pic_1.jpg
   image_circular: false # crops the image to make it circular
   more_info: >
 
-selected_papers: true # includes a list of papers marked as "selected={true}"
+selected_papers: False # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 
 announcements:
@@ -18,9 +18,9 @@ announcements:
   limit: 5 # leave blank to include all the news in the `_news` folder
 
 latest_posts:
-  enabled: true
+  enabled: False
   scrollable: true # adds a vertical scroll bar if there are more than 3 new posts items
-  limit: 3 # leave blank to include all the blog posts
+  limit: 2 # leave blank to include all the blog posts
 ---
 
 Hi! I am Heekyung(Anne) Lee. I am an Undergraduate Student in Computer Science at [POSTECH](https://www.postech.ac.kr/eng/), South Korea. I am also an undergraduate researcher at [Berkeley AI Research (BAIR)](https://bair.berkeley.edu/), fortunate to be supervised under [Prof. Trevor Darrell](https://people.eecs.berkeley.edu/~trevor/)'s group.
