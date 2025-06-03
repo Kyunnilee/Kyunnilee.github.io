@@ -42,4 +42,8 @@ My recent research interests are on <b>Multi-Modal Language Models</b>.
 
 Feel free to check out my [selected papers](/papers/) and [projects](/projects/).
 
+.
+
+And also, lets be Strava friends! (Follow me here: [Heekyung Lee](https://strava.app.link/7fH6Z2mjTTb)) I love running.
+
 Email: annelee5270{at}gmail{dot}com
