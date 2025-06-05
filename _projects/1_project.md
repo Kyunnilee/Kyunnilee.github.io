@@ -1,10 +1,10 @@
 ---
 layout: page
-title: Cheese Touch! A Temperature-Dependent Simulation of Melting Cheese
-description: A visually compelling and physically accurate simulation of melting cheese using particle systems and rendering techniques.
+title: The Cheese Touch! A Temperature-Dependent Simulation of Melting Cheese
+description: CS184: Foundations of Computer Graphics, Final Project. We built a visually compelling simulation of melting cheese using particle systems and rendering techniques!
 img: assets/img/1.jpg
 importance: 1
-category: work
+category: UC Berkeley
 related_publications: false
 ---
 

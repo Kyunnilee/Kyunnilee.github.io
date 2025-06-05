@@ -4,17 +4,18 @@ title: A SCAVENGER HUNT GAME FOR LLM AGENTS
 description: A benchmark to evaluate spatial reasoning and navigational capabilities of LLM agents via a scavenger hunt game. (Final project for CS194/294, UC Berkeley)
 img: assets/img/scavengerhunt.png
 importance: 1
-category: work
+category: UC Berkeley
 related_publications: false
 ---
 
 ## SPATIAL PERCEPTION AND REASONING BENCHMARK (SPARK): A SCAVENGER HUNT GAME FOR LLM AGENTS
 
+
 🔥 This project is the winner of [LLM Agents](https://rdi.berkeley.edu/llm-agents-hackathon/), 3rd place in Benchmark Track. Take a look at our project below.
 
 [Paper](https://github.com/Kyunnilee/llm_scavengerhunt/blob/main/paper/194_Scavenger_Hunt_Submission.pdf) | [Extended Abstract](https://github.com/Kyunnilee/llm_scavengerhunt/blob/main/paper/Extended_Abstract.pdf) | [Video](https://drive.google.com/drive/folders/1I0CfSKPIilZk__pB_aDKOydfYclBj1Wo) | [Slides](https://drive.google.com/drive/folders/1I0CfSKPIilZk__pB_aDKOydfYclBj1Wo)
 
-![teaser](/assets/img/scavengerhunt.png)
+<img src="/assets/img/scavengerhunt.png" alt="teaser" style="max-width: 100%; height: auto; margin-top: 1rem;" />
 
 ### Abstract
 
@@ -99,7 +100,7 @@ python run_single_vis.py
 
 And you will see a web visualization of the testing process.
 
-![run_single_vis](./images/README/run_single_vis.png)
+<img src="/assets/img/scavengerhunt_teaser.png" alt="run_single_vis" style="max-width: 100%; height: auto; margin-top: 1rem;" />
 
 ### Run Batch Experiments
 
