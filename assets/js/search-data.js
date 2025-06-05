@@ -55,9 +55,9 @@ ninja.data = [{
           section: "News",},{id: "news-my-first-paper-is-out-puzzled-by-puzzles-when-vision-language-models-can-t-take-a-hint-follow-this-visual-puzzles",
           title: '🧩 My first paper is out! Puzzled by Puzzles: When Vision-Language Models Can’t...',
           description: "",
-          section: "News",},{id: "projects-cheese-touch-a-temperature-dependent-simulation-of-melting-cheese",
-          title: 'Cheese Touch! A Temperature-Dependent Simulation of Melting Cheese',
-          description: "A visually compelling and physically accurate simulation of melting cheese using particle systems and rendering techniques.",
+          section: "News",},{id: "projects-",
+          title: '',
+          description: "",
           section: "Projects",handler: () => {
               window.location.href = "/projects/1_project/";
             },},{id: "projects-a-scavenger-hunt-game-for-llm-agents",
@@ -65,6 +65,11 @@ ninja.data = [{
           description: "A benchmark to evaluate spatial reasoning and navigational capabilities of LLM agents via a scavenger hunt game. (Final project for CS194/294, UC Berkeley)",
           section: "Projects",handler: () => {
               window.location.href = "/projects/2_project/";
+            },},{id: "projects-",
+          title: '',
+          description: "",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/3_project/";
             },},{
         id: 'social-email',
         title: 'email',
