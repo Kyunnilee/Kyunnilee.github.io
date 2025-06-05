@@ -60,6 +60,11 @@ ninja.data = [{
           description: "A visually compelling and physically accurate simulation of melting cheese using particle systems and rendering techniques.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/1_project/";
+            },},{id: "projects-a-scavenger-hunt-game-for-llm-agents",
+          title: 'A SCAVENGER HUNT GAME FOR LLM AGENTS',
+          description: "A benchmark to evaluate spatial reasoning and navigational capabilities of LLM agents via a scavenger hunt game. (Final project for CS194/294, UC Berkeley)",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/2_project/";
             },},{
         id: 'social-email',
         title: 'email',
