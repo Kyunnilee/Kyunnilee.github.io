@@ -1,65 +1,143 @@
 ---
 layout: page
-title: The Cheese Touch! A Temperature-Dependent Simulation of Melting Cheese
-description: CS184: Foundations of Computer Graphics, Final Project. We built a visually compelling simulation of melting cheese using particle systems and rendering techniques!
-img: assets/img/1.jpg
+title: A SCAVENGER HUNT GAME FOR LLM AGENTS
+description: A benchmark to evaluate spatial reasoning and navigational capabilities of LLM agents via a scavenger hunt game. (Final project for CS194/294, UC Berkeley)
+img: assets/img/scavengerhunt.png
 importance: 1
 category: UC Berkeley
 related_publications: false
 ---
 
-<div class="row">
-  <div class="col-sm mt-3 mt-md-0">
-    {% include figure.liquid loading="eager" path="assets/img/1.jpg" title="Teaser image of cheese melting simulation" class="img-fluid rounded z-depth-1" %}
-  </div>
-</div>
+## SPATIAL PERCEPTION AND REASONING BENCHMARK (SPARK): A SCAVENGER HUNT GAME FOR LLM AGENTS
 
-<div class="caption">
-  Teaser image showing realistic cheese melting rendered using surfel texturing and marching cubes surface reconstruction.
-</div>
 
-## Project Overview
+🔥 This project is the winner of [LLM Agents](https://rdi.berkeley.edu/llm-agents-hackathon/), 3rd place in Benchmark Track. Take a look at our project below.
 
-This final project implements a temperature-dependent cheese simulation that mimics realistic melting behavior. Our project combines a particle-based deformation system (phyxels), surface reconstruction via marching cubes, and surfel-based rendering for visual detail.
+[Paper](https://github.com/Kyunnilee/llm_scavengerhunt/blob/main/paper/194_Scavenger_Hunt_Submission.pdf) | [Extended Abstract](https://github.com/Kyunnilee/llm_scavengerhunt/blob/main/paper/Extended_Abstract.pdf) | [Video](https://drive.google.com/drive/folders/1I0CfSKPIilZk__pB_aDKOydfYclBj1Wo) | [Slides](https://drive.google.com/drive/folders/1I0CfSKPIilZk__pB_aDKOydfYclBj1Wo)
 
-We aimed to capture both the physical plausibility and visual aesthetics of cheese melting, including:
+<img src="/assets/img/scavengerhunt.png" alt="teaser" style="max-width: 100%; height: auto; margin-top: 1rem;" />
 
-- Elastic and plastic deformation behavior
-- Heat propagation through particles
-- Surface geometry evolution using marching cubes
-- Texture and shading details via surfels
+### Abstract
 
-## Features
+*We propose a novel open-source testing framework and benchmark in the field of Vision-Language Navigation (VLN) to evaluate the goal-seeking capabilities of Large Language Model (LLM) agents in real-world environments. To this end, we designed a QA agent that operates without relying on human supervision or data annotations, serving as a semantic heuristic function to provide navigational cues to the agent under evaluation. Additionally, we leveraged techniques such as Reinforcement Learning with AI Feedback (RLAIF) to develop new metrics for detailed analysis of the agent’s progressive information acquisition, multimodal cross-inference, and spatial reasoning abilities. Experimental results demonstrate significant room for improvement in current LLM agents across these dimensions. Future work may explore enhancing LLMs’ visual perception capabilities and their alignment of spatial information with semantic understanding.*
 
-<div class="row">
-  <div class="col-sm mt-3 mt-md-0">
-    {% include figure.liquid loading="eager" path="assets/img/1.jpg" title="Surface grid and volume layout" class="img-fluid rounded z-depth-1" %}
-  </div>
-  <div class="col-sm mt-3 mt-md-0">
-    {% include figure.liquid loading="eager" path="assets/img/1.jpg" title="Rendering pipeline with surfels" class="img-fluid rounded z-depth-1" %}
-  </div>
-</div>
+---
 
-<div class="caption">
-  Left: The grid layout of the cheese volume with heating zones. Right: The surfel rendering pipeline for surface and shading details.
-</div>
+## How-To Run?
 
-## Core Implementation Highlights
+### Environment Setup
 
-- **Phyxels (Physical Particles):** Each cheese volume is modeled as a grid of particles with spring-like forces, simulating elastic and melting behavior.
-- **Heat Propagation:** Heat is simulated via a scalar field over time, affecting the deformation of particles.
-- **Marching Cubes Surface Extraction:** The dynamic cheese surface is reconstructed frame-by-frame.
-- **Surfel Rendering:** We used surfels to add texture and shading, giving the cheese a soft, detailed appearance.
+You can verify your environment by running the setup check script:
 
-## Reflections
+---
 
-This project was both technically and artistically fulfilling. We explored simulation stability, volume-based rendering, and surfel shading from research papers, including:
+**Command:**
+```
+python check_setup.py
+```
 
-- *Point-Based Animation of Elastic, Plastic, and Melting Objects*
-- *Surfels: Surface Elements as Rendering Primitives*
+---
 
-## Team
+This will confirm that the required libraries and API keys are configured properly.
 
-This project was developed by Heekyung Lee and Jaewon Hur as part of CS 184/284A: Foundations of Computer Graphics at UC Berkeley.
+### Dataset Setup
 
-You can view the full interactive webpage [here](https://cal-cs184-student.github.io/hw-webpages-jaewonheekyung/final_project/index.html).
+The dataset is consisted of two parts: map and task.
+
+#### Map Setup
+
+We follow previous works and used the `touchdown` version dataset to express the map.
+
+The dataset is consisted of `nodes.txt` and `links.txt`. 
+
+These files will describe the graph as $(V, E)$ where $V$ are vertices and $E$ are edges.
+
+```
+# Example nodes.txt
+<panoid>,<heading>,<latitude>,<longtitude>
+```
+
+```
+# Example links.txt
+<panoid_1>,<heading_direction>,<panoid_2>
+```
+
+You should have your dataset path written in `config/map/<your_map_selection>.json`. It looks like:
+
+```json
+{
+    "node": "dataset/nodes.txt",
+    "link": "dataset/links.txt"
+}
+```
+
+#### Task Setup
+
+Task is also a part of our dataset. This is mainly written in `config/task`, where it defines a lot of scavenger hunt targets for LLM to be tested on. Each task consists of `starting_panoids`, `start_heading`, `target_infos` and `arrival_threshold`.
+
+Tasks are usually generated on different levels: easy, medium and hard. They mainly differ in path length, number of corners, and how obvious the target is.
+
+---
+
+## Run Experiments
+
+### Run Single Experiment
+
+All the config files can be found in `config/`. An example is provided in `main.sh`.
+
+---
+**Command:**
+```
+python navigator.py --help/-h
+```
+---
+
+---
+**Command:**
+```
+python navigator.py --navi=<your_navi_config>.json \
+                    --map=<touchdown_format_map>.json \
+                    --eval=<evaluator_config>.json \
+                    --task=<your_task>.json \
+                    --vision=<vision_input_mode_for_agents>.json \
+```
+---
+
+### Run Single Experiment (With web visualization)
+
+You can run the following python file.
+
+---
+**Command:**
+```
+python run_single_vis.py
+```
+---
+
+And you will see a web visualization of the testing process.
+
+<img src="/assets/img/scavengerhunt_teaser.png" alt="run_single_vis" style="max-width: 100%; height: auto; margin-top: 1rem;" />
+
+### Run Batch Experiments
+
+`run_batch.py` is a version where you can define your task queue and run them all.
+
+---
+**Command:**
+```
+python run_batch.py
+```
+---
+
+### Run Evaluation
+
+Change the `log_folder` and `task_folder` in the `evaluator.py` to your version. 
+
+This script will automatically find all `.json` logs, evaluate them and aggregate the results.
+
+---
+**Command:**
+```
+python evaluator.py
+```
+---

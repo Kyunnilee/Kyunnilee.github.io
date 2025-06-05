@@ -1,121 +1,76 @@
 ---
 layout: page
-title: A SCAVENGER HUNT GAME FOR LLM AGENTS
-description: A benchmark to evaluate spatial reasoning and navigational capabilities of LLM agents via a scavenger hunt game. (Final project for CS194/294, UC Berkeley)
+title: DayGenie: A Multi-Agent LLM Travel Assistant
+description: A multi-agent llm travel assistant that generates personalized trip and transport recommendations based on user preferences and schedules.
 img: assets/img/scavengerhunt.png
 importance: 1
 category: UC Berkeley
 related_publications: false
 ---
 
-## SPATIAL PERCEPTION AND REASONING BENCHMARK (SPARK): A SCAVENGER HUNT GAME FOR LLM AGENTS
+# DayGenie: A Multi-Agent LLM Travel Assistant
 
+🔥 This project is a winner of [CalHacks11](https://live.hackberkeley.org). Honorable mentions in Fetch ai track. You can also find our project in [Devpost](https://devpost.com/software/daygeine#updates).
 
-🔥 This project is the winner of [LLM Agents](https://rdi.berkeley.edu/llm-agents-hackathon/), 3rd place in Benchmark Track. Take a look at our project below.
+### Inspiration
 
-[Paper](https://github.com/Kyunnilee/llm_scavengerhunt/blob/main/paper/194_Scavenger_Hunt_Submission.pdf) | [Extended Abstract](https://github.com/Kyunnilee/llm_scavengerhunt/blob/main/paper/Extended_Abstract.pdf) | [Video](https://drive.google.com/drive/folders/1I0CfSKPIilZk__pB_aDKOydfYclBj1Wo) | [Slides](https://drive.google.com/drive/folders/1I0CfSKPIilZk__pB_aDKOydfYclBj1Wo)
+The inspiration for our auto-scheduling project emerged from the increased need for automated and personalized recommendations in travel planning tools. We recognized that multi-agent LLMs hold immense potential to tackle complex tasks such as personalized scheduling. This potential drove our team to want to explore how these models could offer solutions that can integrate into daily life problems. We were also inspired to create this app because of the tediousness of scheduling, and we recognized that our tool could save lots of time.
 
-<img src="/assets/img/scavengerhunt.png" alt="teaser" style="max-width: 100%; height: auto; margin-top: 1rem;" />
+### Our Goal
 
-### Abstract
-
-*We propose a novel open-source testing framework and benchmark in the field of Vision-Language Navigation (VLN) to evaluate the goal-seeking capabilities of Large Language Model (LLM) agents in real-world environments. To this end, we designed a QA agent that operates without relying on human supervision or data annotations, serving as a semantic heuristic function to provide navigational cues to the agent under evaluation. Additionally, we leveraged techniques such as Reinforcement Learning with AI Feedback (RLAIF) to develop new metrics for detailed analysis of the agent’s progressive information acquisition, multimodal cross-inference, and spatial reasoning abilities. Experimental results demonstrate significant room for improvement in current LLM agents across these dimensions. Future work may explore enhancing LLMs’ visual perception capabilities and their alignment of spatial information with semantic understanding.*
-
----
-
-## How-To Run?
-
-### Environment Setup
-
-You can run the following script to check if you have the correct `libraries` and `API_KEYS` setup.
-
-```bash
-python check_setup.py
-```
-
-### Dataset Setup
-
-The dataset is consisted of two parts: map and task.
-
-#### Map Setup
-
-We follow previous works and used the `touchdown` version dataset to express the map.
-
-The dataset is consisted of `nodes.txt` and `links.txt`. 
-
-These files will describe the graph as $(V, E)$ where $V$ are vertices and $E$ are edges.
-
-```
-# Example nodes.txt
-<panoid>,<heading>,<latitude>,<longtitude>
-```
-
-```
-# Example links.txt
-<panoid_1>,<heading_direction>,<panoid_2>
-```
-
-You should have your dataset path written in `config/map/<your_map_selection>.json`. It looks like:
-
-```json
-{
-    "node": "dataset/nodes.txt",
-    "link": "dataset/links.txt"
-}
-```
-
-#### Task Setup
-
-Task is also a part of our dataset. This is mainly written in `config/task`, where it defines a lot of scavenger hunt targets for LLM to be tested on. Each task consists of `starting_panoids`, `start_heading`, `target_infos` and `arrival_threshold`.
-
-Tasks are usually generated on different levels: easy, medium and hard. They mainly differ in path length, number of corners, and how obvious the target is.
+We aim to simplify the process of planning trips and transport for important trips. We also want to introduce users to popular and fun locations along the way. DayGenie automatically generates recommendations based on user preferences and user schedule.
 
 ---
 
-## Run Experiments
+## How We Built It
 
-### Run Single Experiment
+### Agent Workflow
 
-All the config files can be found in `config/`. An example is provided in `main.sh`.
+DayGenie is constructed as a decentralized multi-agent large language model. We defined 5 LLM Agents (InfoAgent, MapAgent, RedditAgent, SummaryAgent, FeedbackAgent), each with specific prompting for their purpose.
 
-```bash
-python navigator.py --help/-h # show all help messages
-```
+**Input:**
+- User preferences (text input)
+- Google Calendar schedule (via Google Calendar API)
 
-```bash
-python navigator.py --navi=<your_navi_config>.json \
-                    --map=<touchdown_format_map>.json \
-                    --eval=<evaluator_config>.json \
-                    --task=<your_task>.json \
-                    --vision=<vision_input_mode_for_agents>.json \
-```
+**Agent Pipeline:**
+- **InfoAgent:** Fetches user input and generates prompts for MapAgent and RedditAgent.
+- **MapAgent:** Finds the location of events from calendar input.
+- **RedditAgent:** Calls Reddit API to fetch and analyze reviews based on key inputs.
+- **SummaryAgent:** Calculates transportation options (time, cost) and provides recommendations based on location and preferences.
+- **FeedbackAgent:** Receives user feedback; if negative, reruns the process, otherwise outputs results.
 
-### Run Single Experiment (With web visualization)
+**Output:** A list of personalized recommendations (transportation, restaurants, cafes, events).
 
-You can run the following python file.
+### Conversation Construction
 
-```bash
-python run_single_vis.py
-```
+We used Fetch AI to facilitate conversations and communication between agents. Each agent is modular and passes information forward through the chain.
 
-And you will see a web visualization of the testing process.
+### Website Construction
 
-<img src="/assets/img/scavengerhunt_teaser.png" alt="run_single_vis" style="max-width: 100%; height: auto; margin-top: 1rem;" />
+We used **Next.js** and **Tailwind CSS** to build a user-friendly and attractive web interface. Although the site hasn't been deployed yet, we plan to do so soon.
 
-### Run Batch Experiments
+---
 
-`run_batch.py` is a version where you can define your task queue and run them all.
+## Challenges We Ran Into
 
-```bash
-python run_batch.py
-```
+- **Agent Design:** Deciding how many and which agents to define.
+- **Hallucinations:** Managing hallucinated outputs from LLM agents.
+- **Understanding Fetch AI:** Learning the Fetch AI agent communication structure and syntax.
 
-### Run Evaluation
+---
 
-Change the `log_folder` and `task_folder` in the `evaluator.py` to your version. 
+## Accomplishments
 
-This script will automatically find all `.json` logs, evaluate them and aggregate the results.
+- Successfully generated conversation workflows between LLM agents.
+- Integrated Google Calendar API, Google Maps, and Reddit API.
+- Added FeedbackAgent for quality control and iterative improvement.
+- Learned a lot from team collaboration and had fun developing a real-world application.
 
-```bash
-python evaluator.py
-```
+---
+
+## What’s Next for DayGenie
+
+- **Frontend Feedback Integration:** Connect user frontend feedback to trigger FeedbackAgent responses.
+- **Speech-to-Text Input:** Add speech recognition for natural user input.
+- **ScoringAgent:** Add a new agent to evaluate and rank recommendations.
+- **Model Fine-Tuning:** Improve performance and personalization with fine-tuning.

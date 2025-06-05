@@ -5,7 +5,7 @@ permalink: /projects/
 description: Welcome to my project page! Some cool and fun projects I have worked on during my studies.
 nav: true
 nav_order: 3
-display_categories: [work, fun]
+display_categories: [UC Berkeley]
 horizontal: false
 ---
 
