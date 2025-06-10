@@ -87,6 +87,13 @@ ninja.data = [{
           window.open("https://www.linkedin.com/in/heekyung-lee-624753289", "_blank");
         },
       },{
+        id: 'social-scholar',
+        title: 'Google Scholar',
+        section: 'Socials',
+        handler: () => {
+          window.open("https://scholar.google.com/citations?user=gXYyJ9gAAAAJ", "_blank");
+        },
+      },{
         id: 'social-x',
         title: 'X',
         section: 'Socials',
