@@ -35,9 +35,6 @@ My recent research interests are on <b>Multi-Modal Language Models</b>.
   <li><strong>Real-World Evaluation of Vision Language Models</strong><br>
       ∘ What is the gap between the performance of VLMs on benchmark datasets and in real-world tasks? How do Vision Language Models respond to complex tasks, and how should we analyze their responses to guide further improvements?
   </li>
-  <li><strong>LLM/VLM Agent Systems</strong><br>
-      ∘ How can we design environments where LLM/VLM agents interact more responsively? How do agent systems behave differently across varying conditions?
-  </li>
 </ul>
 
 Feel free to check out my [publications](https://kyunnilee.github.io/publications/) and [projects](/projects/).
