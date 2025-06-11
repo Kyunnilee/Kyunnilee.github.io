@@ -18,7 +18,7 @@ ninja.data = [{
           },
         },{id: "nav-publications",
           title: "publications",
-          description: "Most updated publications can be found on my [Google Scholar](https://scholar.google.com/citations?user=gXYyJ9gAAAAJ&amp;hl=en) profile.",
+          description: "Most updated publications can be found on my Google Scholar profile.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/publications/";
@@ -46,7 +46,13 @@ ninja.data = [{
           description: "",
           section: "Books",handler: () => {
               window.location.href = "/books/the_godfather/";
-            },},{id: "news-check-out-our-new-paper-generate-but-verify-reducing-visual-hallucination-in-vision-language-models-with-retrospective-resampling-link-to-x-reverse-vlm",
+            },},{id: "education-pohang-university-of-science-and-technology-postech-b-s-in-computer-science-and-engineering",
+          title: 'Pohang University of Science and Technology (POSTECH), B.S. in Computer Science and Engineering...',
+          description: "",
+          section: "Education",},{id: "education-university-of-california-berkeley-2024-fall-2025-spring-academic-year-visiting-student",
+          title: 'University of California, Berkeley, 2024 Fall, 2025 Spring academic year visiting student.',
+          description: "",
+          section: "Education",},{id: "news-check-out-our-new-paper-generate-but-verify-reducing-visual-hallucination-in-vision-language-models-with-retrospective-resampling-link-to-x-reverse-vlm",
           title: '🔥 Check out our new paper Generate, but Verify: Reducing Visual Hallucination in...',
           description: "",
           section: "News",},{id: "news-i-finished-my-fall-2024-spring-2025-exchange-program-at-university-california-berkeley",
