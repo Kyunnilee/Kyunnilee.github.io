@@ -9,7 +9,7 @@ profile:
   image_circular: false # crops the image to make it circular
   more_info: >
 
-selected_papers: False # includes a list of papers marked as "selected={true}"
+selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 
 announcements:
@@ -25,7 +25,7 @@ latest_posts:
 
 Hi! I am Heekyung(Anne) Lee. I am an Undergraduate Student in Computer Science at [POSTECH](https://www.postech.ac.kr/eng/), South Korea. I am also an undergraduate researcher at [Berkeley AI Research (BAIR)](https://bair.berkeley.edu/), fortunate to be supervised under [Prof. Trevor Darrell](https://people.eecs.berkeley.edu/~trevor/)'s group.
 
-I am interested in research topics of <b>Vision</b> and <b>Language</b>, and my current work focuses on applications of vision-language models, such as image captioning, visual question answering, and multimodal reasoning.
+I am interested in studying <b>Vision</b> and <b>Language</b>. My current research focuses on applications of <b>vision-language models</b>, such as image captioning, visual question answering, and multimodal reasoning.
 
 My recent research interests are on <b>Multi-Modal Language Models</b>. 
 <ul>
@@ -40,7 +40,7 @@ My recent research interests are on <b>Multi-Modal Language Models</b>.
   </li>
 </ul>
 
-Feel free to check out my [publications](/_bibliography/) and [projects](/projects/).
+Feel free to check out my [publications](https://kyunnilee.github.io/publications/) and [projects](/projects/).
 
 .
 
