@@ -86,6 +86,10 @@ bing_site_verification: # out your bing-site-verification ID (Bing Webmaster)
 
 blog_name: Blog # blog_name will be displayed in your blog page
 blog_description: Its just to share my thoughts, experiences, and feelings.
+
+# News settings
+news:
+  default_limit: 5 # default limit for news items across the site
 permalink: /blog/:year/:title/
 lsi: false # produce an index for related posts
 
