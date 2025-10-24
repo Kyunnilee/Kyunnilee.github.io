@@ -18,7 +18,7 @@ ninja.data = [{
           },
         },{id: "nav-publications",
           title: "publications",
-          description: "Most updated publications can be found on my Google Scholar profile.",
+          description: "Most updated publications can be found on my [Google Scholar](https://scholar.google.com/citations?user=gXYyJ9gAAAAJ) profile.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/publications/";
@@ -67,8 +67,11 @@ ninja.data = [{
           section: "News",},{id: "news-️-i-am-attending-emnlp-2025-to-present-my-work-on-puzzled-by-puzzles-when-vision-language-models-can-t-take-a-hint-see-you-in-suzhou-china",
           title: '✈️ I am attending EMNLP 2025 to present my work on Puzzled by...',
           description: "",
-          section: "News",},{id: "news-our-paper-generate-but-verify-reducing-visual-hallucination-in-vision-language-models-with-retrospective-resampling-is-accepted-to-neurips-2025",
-          title: '🔥 Our paper Generate, but Verify: Reducing Visual Hallucination in Vision-Language Models with...',
+          section: "News",},{id: "news-️-i-am-attending-neurips-2025-with-our-work-on-generate-but-verify-reducing-visual-hallucination-in-vision-language-models-with-retrospective-resampling-very-excited-to-see-you-all-in-person",
+          title: '✈️ I am attending NeurIPS 2025 with our work on Generate, but Verify:...',
+          description: "",
+          section: "News",},{id: "news-check-out-our-new-paper-constantly-improving-image-models-need-constantly-improving-benchmarks-link-to-echo",
+          title: '🔥 Check out our new paper Constantly Improving Image Models Need Constantly Improving...',
           description: "",
           section: "News",},{id: "projects-a-scavenger-hunt-game-for-llm-agents",
           title: 'A SCAVENGER HUNT GAME FOR LLM AGENTS',
