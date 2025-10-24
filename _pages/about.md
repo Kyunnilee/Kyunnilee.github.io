@@ -30,10 +30,10 @@ I am interested in studying <b>Vision</b> and <b>Language</b>. My current resear
 I am recently excited about the two questions below:
 <ul>
   <li><strong>Controllable and Adaptable Vision-Language Models</strong><br>
-      ∘ How can we build <i>controllable and adaptable intelligence</i> that can adapt their behavior to the user's needs?
+      ∘ How can we build controllable and adaptable intelligence that can adapt their behavior to the user's needs?
   </li>
   <li><strong>Real-World Multimodal Understanding</strong><br>
-      ∘ How can we represent the <i>complex world</i> as data to relect the world's complexity in a better way? How can models figure out the <i>combination of modalities</i> that is most effective to accomplish in given tasks?
+      ∘ How can we represent the complex world as data to relect the world's complexity in a better way? How can models figure out the combination of modalities that is most effective to accomplish in given tasks?
   </li>
 </ul>
 
