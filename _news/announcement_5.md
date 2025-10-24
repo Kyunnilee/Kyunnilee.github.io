@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-✈️ I am attending EMNLP 2025 to present my work on [Puzzled by Puzzles: When Vision-Language Models Can't Take a Hint.](https://github.com/Kyunnilee/visual_puzzles)! See you in Suzhou, China!
+✈️ I am attending [EMNLP 2025](https://2025.emnlp.org) to present my work on [Puzzled by Puzzles: When Vision-Language Models Can't Take a Hint.](https://github.com/Kyunnilee/visual_puzzles) See you in Suzhou, China!

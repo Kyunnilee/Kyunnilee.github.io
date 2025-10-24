@@ -23,17 +23,17 @@ latest_posts:
   limit: 2 # leave blank to include all the blog posts
 ---
 
-Hi! I am Heekyung(Anne) Lee. I am an Undergraduate Student in Computer Science at [POSTECH](https://www.postech.ac.kr/eng/), South Korea. I am also an undergraduate researcher at [Berkeley AI Research (BAIR)](https://bair.berkeley.edu/), fortunate to be supervised under [Prof. Trevor Darrell](https://people.eecs.berkeley.edu/~trevor/)'s group.
+Hi! I am Heekyung(Anne) Lee. I am an Undergraduate Student in Computer Science at [POSTECH](https://www.postech.ac.kr/eng/), South Korea. (Research advised under Prof. [Minsu Cho](https://cvlab.postech.ac.kr/~mcho/)) I am also an undergraduate researcher at [Berkeley AI Research (BAIR)](https://bair.berkeley.edu/), fortunate to be supervised under Prof. [Trevor Darrell](https://people.eecs.berkeley.edu/~trevor/)'s group.
 
-I am interested in studying <b>Vision</b> and <b>Language</b>. My current research focuses on applications of <b>vision-language models</b>, such as image captioning, visual question answering, and multimodal reasoning.
+I am interested in studying <b>Vision</b> and <b>Language</b>. My current research focuses on building <b>trustworthy vision-language models</b>, that are <b>controllable</b> and <b>adaptable</b> to the user's needs.
 
-My recent research interests are on <b>Multi-Modal Language Models</b>. 
+I am recently excited about the two questions below:
 <ul>
-  <li><strong>Hallucination in Vision Language Models</strong><br>
-    ∘ What is <i>hallucination</i> in Vision Language Models, and what are effective training recipes to mitigate it? How can we address hallucinations caused by misalignment between image patches and text tokens?
+  <li><strong>Controllable and Adaptable Vision-Language Models</strong><br>
+      ∘ How can we build <i>controllable and adaptable intelligence</i> that can adapt their behavior to the user's needs?
   </li>
-  <li><strong>Real-World Evaluation of Vision Language Models</strong><br>
-      ∘ What is the gap between the performance of VLMs on benchmark datasets and in real-world tasks? How do Vision Language Models respond to complex tasks, and how should we analyze their responses to guide further improvements?
+  <li><strong>Real-World Multimodal Understanding</strong><br>
+      ∘ How can we represent the <i>complex world</i> as data to relect the world's complexity in a better way? How can models figure out the <i>combination of modalities</i> that is most effective to accomplish in given tasks?
   </li>
 </ul>
 
@@ -41,4 +41,4 @@ Feel free to check out my [publications](https://kyunnilee.github.io/publication
 
 .
 
-And also, lets be Strava friends! (Follow me [here](https://strava.app.link/7fH6Z2mjTTb)) I love running XD.
+And also, I am a huge sports person! I generally enjoy playing soccer and running. Let's be Strava friends! (Follow me [here](https://strava.app.link/7fH6Z2mjTTb))

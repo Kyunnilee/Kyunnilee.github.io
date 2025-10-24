@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-🔥 Our paper [Generate, but Verify: Reducing Visual Hallucination in Vision-Language Models with Retrospective Resampling](https://reverse-vlm.github.io) is accepted to NeurIPS 2025!
+✈️ I am attending [NeurIPS 2025](https://nips.cc/Conferences/2025) with our work on [Generate, but Verify: Reducing Visual Hallucination in Vision-Language Models with Retrospective Resampling](https://reverse-vlm.github.io). Very excited to see you all in person!

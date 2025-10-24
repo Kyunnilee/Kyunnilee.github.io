@@ -21,4 +21,24 @@
 "Kang":
   - firstname: ["Joshua", "Joshua Minwoo", "Minwoo"]
     url: https://joshuaminwookang.github.io/
+
+"Holynski":
+  - firstname: ["Aleksander"]
+    url: https://holynski.org
+
+"Min":
+  - firstname: ["Sewon"]
+    url: https://www.sewonmin.com
+
+"Lian":
+  - firstname: ["Long"]
+    url: https://tonylian.com
+
+"Luo":
+  - firstname: ["Grace"]
+    url: https://graceluo.net
+
+"Wang":
+  - firstname: ["XuDong"]
+    url: https://people.eecs.berkeley.edu/~xdwang/
   
