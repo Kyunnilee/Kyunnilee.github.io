@@ -9,7 +9,7 @@ profile:
   image_circular: false # crops the image to make it circular
   more_info: >
 
-selected_papers: false # includes a list of papers marked as "selected={true}"
+selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
 
 announcements:
@@ -31,11 +31,12 @@ I am recently excited about the two questions below:
 <ul>
   <li><strong>Controllable and Adaptable Vision-Language Models</strong><br>
       ∘ How can we build controllable and adaptable intelligence that can adapt their behavior to the user's needs?
+      <br>
       ∘ What is Hallucination in multi-modal models, and what is the best recipe to mitigate it?
   </li>
   <li><strong>Real-World Multimodal Understanding</strong><br>
       ∘ How can we represent the world as input data that reflects the world's complexity in a better way?
-      
+      <br>
       ∘ How can we build models that are capable of handling complex multi-modality environments as an input? (e.g. how should models know which modality to focus on for a given task?)
   </li>
 </ul>
