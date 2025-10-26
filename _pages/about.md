@@ -23,17 +23,20 @@ latest_posts:
   limit: 2 # leave blank to include all the blog posts
 ---
 
-Hi! I am Heekyung(Anne) Lee. I am an Undergraduate Student in Computer Science at [POSTECH](https://www.postech.ac.kr/eng/), South Korea. (Research advised under Prof. [Minsu Cho](https://cvlab.postech.ac.kr/~mcho/)) I am also an undergraduate researcher at [Berkeley AI Research (BAIR)](https://bair.berkeley.edu/), fortunate to be supervised under Prof. [Trevor Darrell](https://people.eecs.berkeley.edu/~trevor/)'s group.
+Hi! I am Heekyung(Anne) Lee. I am an Undergraduate Student studying Computer Science at [POSTECH](https://www.postech.ac.kr/eng/), South Korea. (Research Advisor: Prof. [Minsu Cho](https://cvlab.postech.ac.kr/~mcho/)) I am also an undergraduate researcher at [Berkeley AI Research (BAIR)](https://bair.berkeley.edu/), fortunate to be supervised under Prof. [Trevor Darrell](https://people.eecs.berkeley.edu/~trevor/)'s group.
 
-I am interested in studying <b>Vision</b> and <b>Language</b>. My current research focuses on building <b>trustworthy vision-language models</b>, that are <b>controllable</b> and <b>adaptable</b> to the user's needs.
+I am interested in building <b>trustworthy multi-modal models</b>, that can flexibly adapt to the user's needs, acting naturally and efficiently in complex multi-modality environments.
 
 I am recently excited about the two questions below:
 <ul>
   <li><strong>Controllable and Adaptable Vision-Language Models</strong><br>
       ∘ How can we build controllable and adaptable intelligence that can adapt their behavior to the user's needs?
+      ∘ What is Hallucination in multi-modal models, and what is the best recipe to mitigate it?
   </li>
   <li><strong>Real-World Multimodal Understanding</strong><br>
-      ∘ How can we represent the complex world as data to relect the world's complexity in a better way? How can models figure out the combination of modalities that is most effective to accomplish in given tasks?
+      ∘ How can we represent the world as input data that reflects the world's complexity in a better way?
+      
+      ∘ How can we build models that are capable of handling complex multi-modality environments as an input? (e.g. how should models know which modality to focus on for a given task?)
   </li>
 </ul>
 
