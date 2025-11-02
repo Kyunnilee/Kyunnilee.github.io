@@ -23,7 +23,7 @@ latest_posts:
   limit: 2 # leave blank to include all the blog posts
 ---
 
-Hi! I am Heekyung(Anne) Lee. I am an Undergraduate Student studying Computer Science at [POSTECH](https://www.postech.ac.kr/eng/), South Korea. (Research Advisor: Prof. [Minsu Cho](https://cvlab.postech.ac.kr/~mcho/)) I am also an undergraduate researcher at [Berkeley AI Research (BAIR)](https://bair.berkeley.edu/), fortunate to be supervised under Prof. [Trevor Darrell](https://people.eecs.berkeley.edu/~trevor/)'s group.
+Hi! I am Heekyung(Anne) Lee. I am an Undergraduate Student studying Computer Science at [POSTECH](https://www.postech.ac.kr/eng/), South Korea. (Research Advisor: Prof. [Minsu Cho](https://cvlab.postech.ac.kr/~mcho/)) I am also an undergraduate researcher at [Berkeley AI Research (BAIR)](https://bair.berkeley.edu/), fortunate to be supervised under Prof. [Trevor Darrell](https://people.eecs.berkeley.edu/~trevor/)'s group. (Advisors: Prof. [Trevor Darrell](https://people.eecs.berkeley.edu/~trevor/), Prof. [Sewon Min](https://www.sewonmin.com), and [David M. Chan](https://dchan.cc/))
 
 I am interested in building <b>trustworthy multi-modal models</b>, that can flexibly adapt to the user's needs, acting naturally and efficiently in complex multi-modality environments.
 
