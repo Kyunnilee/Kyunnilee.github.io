@@ -25,19 +25,17 @@ latest_posts:
 
 Hi! I am Heekyung(Anne) Lee. I am an Undergraduate Student studying Computer Science at [POSTECH](https://www.postech.ac.kr/eng/), South Korea. (Research Advisor: Prof. [Minsu Cho](https://cvlab.postech.ac.kr/~mcho/)) I am also an undergraduate researcher at [Berkeley AI Research (BAIR)](https://bair.berkeley.edu/), fortunate to be supervised under Prof. [Trevor Darrell](https://people.eecs.berkeley.edu/~trevor/)'s group. (Advisors: Prof. [Trevor Darrell](https://people.eecs.berkeley.edu/~trevor/), Prof. [Sewon Min](https://www.sewonmin.com), and [David M. Chan](https://dchan.cc/))
 
-I am interested in building <b>trustworthy multi-modal models</b>, that can flexibly adapt to the user's needs, acting naturally and efficiently in complex multi-modality environments.
+I am interested in topics of <b>Hallucination in multi-modal models</b>, and <b>Real-World Understanding and Interaction</b>.
 
 I am recently excited about the two questions below:
 <ul>
-  <li><strong>Controllable and Adaptable Vision-Language Models</strong><br>
-      ∘ How can we build controllable and adaptable intelligence that can adapt their behavior to the user's needs?
-      <br>
-      ∘ What is Hallucination in multi-modal models, and what is the best recipe to mitigate it?
+  <li><strong>Hallucination in Visual-Reasoning Models</strong><br>
+      ∘ What is Hallucination in multi-modal reasoning models, and what is the best recipe to mitigate it?
   </li>
   <li><strong>Real-World Multimodal Understanding</strong><br>
-      ∘ How can we represent the world as input data that reflects the world's complexity in a better way?
+      ∘ <b>Human-AI Interaction</b> to synergize to achieve better results - uncertainty of models, control flow of thinking.
       <br>
-      ∘ How can we build models that are capable of handling complex multi-modality environments as an input? (e.g. how should models know which modality to focus on for a given task?)
+      ∘ Studying Multimodality, diverse RL algorithms, and domains for robotics or VLAs.
   </li>
 </ul>
 
