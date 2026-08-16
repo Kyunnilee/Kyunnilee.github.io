@@ -23,7 +23,7 @@ latest_posts:
   limit: 2 # leave blank to include all the blog posts
 ---
 
-Hi! I am Heekyung(Anne) Lee. I am an Undergraduate Student studying Computer Science at [POSTECH](https://www.postech.ac.kr/eng/), South Korea. (Research Advisor: Prof. [Minsu Cho](https://cvlab.postech.ac.kr/~mcho/)) I am also an undergraduate researcher at [Berkeley AI Research (BAIR)](https://bair.berkeley.edu/), fortunate to be supervised under Prof. [Trevor Darrell](https://people.eecs.berkeley.edu/~trevor/)'s group. (Advisors: Prof. [Trevor Darrell](https://people.eecs.berkeley.edu/~trevor/), Prof. [Sewon Min](https://www.sewonmin.com), and [David M. Chan](https://dchan.cc/))
+Hi! I am Heekyung(Anne) Lee. I am a Computer Science Ph.D. student at [UC Berkeley](https://www.berkeley.edu/), supervised under Prof. [Trevor Darrell](https://people.eecs.berkeley.edu/~trevor/) at [BAIR](https://bair.berkeley.edu/). Previously, I received my B.S. in Computer Science from [POSTECH](https://www.postech.ac.kr/eng/).
 
 I am interested in topics of <b>Hallucination in multi-modal models</b>, and <b>Real-World Understanding and Interaction</b>.
 
