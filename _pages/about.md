@@ -25,19 +25,8 @@ latest_posts:
 
 Hi! I am Heekyung(Anne) Lee. I am a Computer Science Ph.D. student at [UC Berkeley](https://www.berkeley.edu/), supervised under Prof. [Trevor Darrell](https://people.eecs.berkeley.edu/~trevor/) at [BAIR](https://bair.berkeley.edu/). Previously, I received my B.S. in Computer Science from [POSTECH](https://www.postech.ac.kr/eng/).
 
-I am interested in topics of <b>Hallucination in multi-modal models</b>, and <b>Real-World Understanding and Interaction</b>.
-
-I am recently excited about the two questions below:
-<ul>
-  <li><strong>Hallucination in Visual-Reasoning Models</strong><br>
-      ∘ What is Hallucination in multi-modal reasoning models, and what is the best recipe to mitigate it?
-  </li>
-  <li><strong>Real-World Multimodal Understanding</strong><br>
-      ∘ <b>Human-AI Interaction</b> to synergize to achieve better results - uncertainty of models, control flow of thinking.
-      <br>
-      ∘ Studying Multimodality, diverse RL algorithms, and domains for robotics or VLAs.
-  </li>
-</ul>
+<p>I build vision models for robotics.</p>
+<p>My goal is to build systems that can understand different humans and adapt their behavior based on context. I hope the models we build can enhance human lives for all. I am also interested in building verifiable models.</p>
 
 Feel free to check out my [publications](https://kyunnilee.github.io/publications/) and [projects](/projects/).
 
