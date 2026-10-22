@@ -73,6 +73,12 @@ ninja.data = [{
           section: "News",},{id: "news-check-out-our-new-paper-constantly-improving-image-models-need-constantly-improving-benchmarks-link-to-echo",
           title: '🔥 Check out our new paper Constantly Improving Image Models Need Constantly Improving...',
           description: "",
+          section: "News",},{id: "news-i-started-my-phd-under-prof-trevor-darrell",
+          title: '🍀 I started my PhD. under Prof. Trevor Darrell.',
+          description: "",
+          section: "News",},{id: "news-check-out-our-new-paper-cova-sft-we-are-presenting-in-emnlp-2026-baylearn-2026",
+          title: '🔥 Check out our new paper COVA-SFT! We are presenting in EMNLP 2026,...',
+          description: "",
           section: "News",},{id: "projects-a-scavenger-hunt-game-for-llm-agents",
           title: 'A SCAVENGER HUNT GAME FOR LLM AGENTS',
           description: "A benchmark to evaluate spatial reasoning and navigational capabilities of LLM agents via a scavenger hunt game. (Final project for CS194/294, UC Berkeley)",
@@ -88,7 +94,7 @@ ninja.data = [{
         title: 'email',
         section: 'Socials',
         handler: () => {
-          window.open("mailto:%61%6E%6E%65%6C%65%65%35%32%37%30@%67%6D%61%69%6C.%63%6F%6D", "_blank");
+          window.open("mailto:%61%6E%6E%65%6C%65%65@%62%65%72%6B%65%6C%65%79.%65%64%75", "_blank");
         },
       },{
         id: 'social-github',
