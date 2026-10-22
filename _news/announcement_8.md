@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-🍀 I started my PhD. under [Prof. Trevor Darrell](https://people.eecs.berkeley.edu/~trevor/).
+📖 I started my PhD. in UC Berkeley

@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-🔥 Check out our new paper [COVA-SFT](https://arxiv.org/abs/2608.28958)! We are presenting in EMNLP 2026, Baylearn 2026.
+🔥 We are presenting our paper [COVA-SFT](https://arxiv.org/abs/2608.28958) in [EMNLP Findings 2026](https://2026.emnlp.org) and [Baylearn 2026](https://baylearn-org.github.io/www/schedule.html).
