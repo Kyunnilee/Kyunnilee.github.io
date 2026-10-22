@@ -25,8 +25,8 @@ latest_posts:
 
 Hi! I am Heekyung(Anne) Lee. I am a Computer Science Ph.D. student at [UC Berkeley](https://www.berkeley.edu/), supervised under Prof. [Trevor Darrell](https://people.eecs.berkeley.edu/~trevor/) at [BAIR](https://bair.berkeley.edu/). Previously, I received my B.S. in Computer Science from [POSTECH](https://www.postech.ac.kr/eng/).
 
-<p>I build vision models for robotics.</p>
-<p>My goal is to build systems that can understand different humans and adapt their behavior based on context. I hope the models we build can enhance human lives for all. I am also interested in building verifiable models.</p>
+<p>I build multimodal model and systems for physical AI.</p>
+<p>I am recently studying reasoning with non-textual representations: where does the gap between humans and models comes from, and what core representation a high-level planner should pass to low-level skills.</p>
 
 Feel free to check out my [publications](https://kyunnilee.github.io/publications/) and [projects](/projects/).
 

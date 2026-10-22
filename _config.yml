@@ -302,6 +302,7 @@ filtered_bibtex_keywords:
     bibtex_show,
     blog,
     code,
+    dataset,
     page,
     google_scholar_id,
     html,
