@@ -25,8 +25,8 @@ latest_posts:
 
 Hi! I am Heekyung(Anne) Lee. I am a Computer Science Ph.D. student at [UC Berkeley](https://www.berkeley.edu/), supervised under Prof. [Trevor Darrell](https://people.eecs.berkeley.edu/~trevor/) at [BAIR](https://bair.berkeley.edu/). Previously, I received my B.S. in Computer Science from [POSTECH](https://www.postech.ac.kr/eng/).
 
-<p>I build multimodal model and systems for physical AI.</p>
-<p>I am recently studying reasoning with non-textual representations: where does the gap between humans and models comes from, and what core representation a high-level planner should pass to low-level skills.</p>
+<p>I build multimodal models and systems for physical AI.</p>
+<p>I am recently interested in reasoning methods of Multimodal Models. Especially on non-textual representations: where does the gap between humans and models come from, and tasks that cannot be solved with textual representations itself.</p>
 
 Feel free to check out my [publications](https://kyunnilee.github.io/publications/) and [projects](/projects/).
 
