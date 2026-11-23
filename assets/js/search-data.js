@@ -30,7 +30,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/projects/";
           },
-        },{id: "post-example-post",
+        },{id: "post-apro-measuring-agentic-physical-reasoning",
+        
+          title: "APRO: Measuring Agentic Physical Reasoning",
+        
+        description: "Can VLMs turn what they see about physics into actions that work?",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/blog/2026/apro/";
+          
+        },
+      },{id: "post-example-post",
         
           title: "Example Post",
         
