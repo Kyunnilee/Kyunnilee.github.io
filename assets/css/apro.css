@@ -354,18 +354,30 @@ html[data-theme="dark"] .regime-chip.r2 {
 html[data-theme="dark"] .regime-chip.r3 {
   color: #b39ddb;
 }
+/* findings box: plain blue rectangle */
 .finding {
-  border: 1px solid var(--apro-rule);
-  border-left: 4px solid var(--apro-accent);
-  border-radius: 0 10px 10px 0;
+  --finding-blue: #2563eb;
+  --finding-bg: #eff6ff;
+  border: 1.5px solid var(--finding-blue);
+  border-radius: 0;
+  background: var(--finding-bg);
   padding: 0.75rem 1.1rem 0.5rem;
   margin: 0.5rem 0 1.25rem;
 }
+html[data-theme="dark"] .finding {
+  --finding-blue: #60a5fa;
+  --finding-bg: rgba(96, 165, 250, 0.1);
+}
 .finding .exp-num {
   margin-top: 0;
+  color: var(--finding-blue);
 }
 .finding .exp-title {
   margin-bottom: 0.4rem;
+}
+.finding p {
+  margin: 0.15rem 0 0.25rem;
+  font-size: 15.5px;
 }
 .finding ul {
   margin: 0;
@@ -730,6 +742,74 @@ html[data-theme="dark"] .apro-chart {
   to {
     opacity: 1;
   }
+}
+.ac-multi {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 6px 22px;
+}
+.ac-panel {
+  min-width: 0;
+}
+.ac-panel-title {
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0 0 2px 4px;
+}
+.ac-oracle-rule {
+  stroke: var(--ac-grid);
+  stroke-width: 3;
+}
+.ac-flip-title {
+  font-size: 13.5px;
+  font-weight: 600;
+  fill: var(--global-text-color);
+}
+.ac-flip-head {
+  font-size: 12px;
+  font-weight: 600;
+}
+.ac-flip-head.reg,
+.ac-flip-val.reg {
+  fill: var(--ac-down);
+}
+.ac-flip-head.cor,
+.ac-flip-val.cor {
+  fill: var(--ac-s1);
+}
+.ac-flip-val {
+  font-size: 11.5px;
+}
+.ac-flip-zero {
+  stroke: var(--ac-muted);
+  stroke-width: 1.2;
+}
+.ac-flip-na {
+  font-size: 11.5px;
+  fill: var(--ac-muted);
+}
+.ac-flip-reg,
+.ac-flip-key.reg {
+  fill: var(--ac-down);
+  background: var(--ac-down);
+  opacity: 0.4;
+}
+.ac-flip-reg.open,
+.ac-flip-key.reg.open {
+  opacity: 0.95;
+}
+.ac-flip-cor,
+.ac-flip-key.cor {
+  fill: var(--ac-s1);
+  background: var(--ac-s1);
+  opacity: 0.55;
+}
+.ac-flip-key {
+  display: inline-block;
+  width: 14px;
+  height: 10px;
+  border-radius: 2px;
+  margin-right: 6px;
 }
 .ac-star-sums {
   display: flex;

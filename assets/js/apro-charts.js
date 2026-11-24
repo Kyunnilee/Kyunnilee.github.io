@@ -53,10 +53,10 @@
       return;
     }
     root.classList.add("apro-chart");
-    var state = { panel: 0, focus: null, extra: !!cfg.extraDefault };
+    var state = { panel: 0, focus: null, extra: !!cfg.extraDefault, stars: !!cfg.starsOn };
     var top = div("ac-top", root);
     var tabs = div("ac-tabs", top);
-    if (cfg.panels.length > 1) {
+    if (cfg.panels.length > 1 && !cfg.sideBySide) {
       cfg.panels.forEach(function (p, i) {
         var b = document.createElement("button");
         b.type = "button";
@@ -106,10 +106,35 @@
       area.innerHTML = "";
       legend.innerHTML = "";
       tip.style.display = "none";
-      var p = cfg.panels[state.panel];
+      state.focusFns = [];
       if (state.starBtn) {
         state.starBtn.className = "ac-star-btn" + (state.stars ? " on" : "");
       }
+      if (cfg.sideBySide) {
+        /* every panel drawn at once in a row (stacks on narrow screens); one shared legend */
+        area.className = "ac-area ac-multi";
+        // lay out every column first so each panel measures its final width
+        var cols = cfg.panels.map(function (p) {
+          var col = div("ac-panel", area);
+          div("ac-panel-title", col, p.tab || "");
+          return { area: div("ac-area", col), note: div("ac-note", col, p.note || "") };
+        });
+        cfg.panels.forEach(function (p, i) {
+          draw({
+            root: root,
+            area: cols[i].area,
+            legend: i === 0 ? legend : div(null, null),
+            note: cols[i].note,
+            tip: tip,
+            panel: p,
+            state: state,
+            rerender: render,
+          });
+        });
+        return;
+      }
+      area.className = "ac-area";
+      var p = cfg.panels[state.panel];
       note.innerHTML = p.note || "";
       draw({ root: root, area: area, legend: legend, note: note, tip: tip, panel: p, state: state, rerender: render });
     }
@@ -170,7 +195,18 @@
       var p = ctx.panel,
         W = ctx.area.clientWidth,
         H = p.height || 290;
-      var m = { l: 40, r: 14, t: 14, b: p.xTitle ? 58 : 44 };
+      var showStars = ctx.state.stars && p.stars;
+      var lastIx = p.x.length - 1;
+      /* Figure-7 style: oracle results at the last k go in a column right of the plot, one arrow per model */
+      var gutter = [];
+      if (showStars) {
+        p.stars.forEach(function (st) {
+          if (st.at[lastIx] !== undefined) {
+            gutter.push(st.key);
+          }
+        });
+      }
+      var m = { l: 40, r: gutter.length ? 26 + gutter.length * 11 : 14, t: gutter.length ? 24 : 14, b: p.xTitle ? 58 : 44 };
       var s = svg("svg", { width: W, height: H, viewBox: "0 0 " + W + " " + H, role: "img", "aria-label": p.aria || "" }, ctx.area);
       var iw = W - m.l - m.r,
         ih = H - m.t - m.b,
@@ -264,7 +300,6 @@
       if (hasMean) {
         drawSeries(p.mean, true);
       }
-      var showStars = ctx.state.stars && p.stars;
       function starPath(cx, cy, R) {
         var d = "",
           r2 = R * 0.45;
@@ -274,6 +309,33 @@
           d += (i ? "L" : "M") + (cx + rr * Math.cos(a)).toFixed(1) + "," + (cy + rr * Math.sin(a)).toFixed(1);
         }
         return d + "Z";
+      }
+      function oracleArrow(g, key, x0, base, v, ax) {
+        var c = color(key),
+          yb = Y(base),
+          yv = Y(v);
+        // dotted leader from the k = last point to this model's arrow column
+        svg("line", { x1: x0 + 4, x2: ax, y1: yb, y2: yb, stroke: c, "stroke-width": 1.6, "stroke-dasharray": "1.5 3", class: "ac-star-link" }, g);
+        var sg = yv < yb ? -1 : 1,
+          tip = yv - sg * 8;
+        if ((tip - yb) * sg > 7) {
+          svg("line", { x1: ax, x2: ax, y1: yb, y2: tip - sg * 5, stroke: c, "stroke-width": 2.2, class: "ac-star-link" }, g);
+          svg(
+            "path",
+            {
+              d: "M" + (ax - 4.5) + "," + (tip - sg * 6) + "L" + (ax + 4.5) + "," + (tip - sg * 6) + "L" + ax + "," + tip + "Z",
+              fill: c,
+              class: "ac-star-link",
+            },
+            g
+          );
+        }
+        svg("path", { d: starPath(ax, yv, 7.5), fill: c, stroke: "var(--ac-surface)", "stroke-width": 1.2, class: "ac-star" }, g);
+      }
+      if (gutter.length) {
+        var gx = X(lastIx) + 12;
+        svg("line", { x1: gx, x2: gx, y1: m.t - 4, y2: m.t + ih, class: "ac-oracle-rule" }, s);
+        svg("text", { x: gx + 4, y: m.t - 9, class: "ac-xtitle", "text-anchor": "start" }, s).textContent = "oracle";
       }
       if (showStars) {
         p.stars.forEach(function (st) {
@@ -289,6 +351,11 @@
                 base = sr.values[i];
               }
             });
+            var gj = i === lastIx ? gutter.indexOf(st.key) : -1;
+            if (gj >= 0) {
+              oracleArrow(g, st.key, X(i), base, v, X(lastIx) + 20 + gj * 11);
+              return;
+            }
             if (base !== null && base !== undefined && Math.abs(base - v) > 1) {
               svg(
                 "line",
@@ -318,6 +385,7 @@
         });
       }
       applyFocus(null);
+      ctx.state.focusFns.push(applyFocus);
       var keys = [];
       series.forEach(function (sr) {
         if (keys.indexOf(sr.key) < 0) {
@@ -327,12 +395,25 @@
       if (hasMean) {
         keys.push("mean");
       }
-      legendChips(ctx, keys, { meanName: p.mean ? p.mean.name : "", hover: applyFocus });
+      legendChips(ctx, keys, {
+        meanName: p.mean ? p.mean.name : "",
+        hover: function (k) {
+          ctx.state.focusFns.forEach(function (f) {
+            f(k);
+          });
+        },
+      });
       if (ctx.state.extra && p.extra) {
         div("ac-legend-note", ctx.legend, p.extraLegend || "");
       }
       if (showStars) {
-        div("ac-legend-note", ctx.legend, "&#9733; oracle setting (k = 1 and k = " + n + ")");
+        div(
+          "ac-legend-note",
+          ctx.legend,
+          gutter.length
+            ? "&#9733; oracle setting; arrows show the change at k = " + n + ", stars at k = 1 the oracle first try"
+            : "&#9733; oracle setting (k = 1 and k = " + n + ")"
+        );
         var last = n - 1,
           items = [];
         p.stars.forEach(function (st) {
@@ -517,6 +598,117 @@
     });
   }
 
+  /* ---------- flips: regressions (left) vs corrections (right) per model, several panels in a row ---------- */
+  function flips(id, cfg) {
+    var root = document.getElementById(id);
+    if (!root) {
+      return;
+    }
+    root.classList.add("apro-chart");
+    var area = div("ac-area", root),
+      legend = div("ac-legend", root),
+      note = div("ac-note", root, cfg.note || ""),
+      tip = div("ac-tip", root);
+    var open = cfg.openWeight || [];
+    var ctx = { root: root, area: area, tip: tip };
+    function render() {
+      area.innerHTML = "";
+      tip.style.display = "none";
+      var W = area.clientWidth,
+        rowH = 26,
+        n = cfg.models.length;
+      var wide = W >= 620,
+        labW = wide ? 128 : 112,
+        gap = 18;
+      var top = 44,
+        bot = 30,
+        ph = top + bot + rowH * n;
+      var cols = wide ? cfg.panels.length : 1,
+        rows = wide ? 1 : cfg.panels.length;
+      var pw = (W - labW - gap * (cols - 1)) / cols;
+      var H = ph * rows + (rows - 1) * 16 + (wide ? 22 : 36);
+      var s = svg("svg", { width: W, height: H, viewBox: "0 0 " + W + " " + H, role: "img", "aria-label": cfg.aria || "" }, area);
+      cfg.panels.forEach(function (p, pi) {
+        var ox = labW + (wide ? pi * (pw + gap) : 0),
+          oy = wide ? 0 : pi * (ph + 16);
+        var L = p.left || 35,
+          R = p.right || 40,
+          pad = 22;
+        var X = function (v) {
+          return ox + pad + ((v + L) / (L + R)) * (pw - 2 * pad);
+        };
+        if (pi === 0 || !wide) {
+          cfg.models.forEach(function (k, i) {
+            svg("text", { x: labW - 10, y: oy + top + rowH * i + rowH / 2 + 4, class: "ac-db-lab", "text-anchor": "end" }, s).textContent = name(k);
+          });
+        }
+        svg("text", { x: ox + 4, y: oy + 13, class: "ac-flip-title" }, s).textContent = p.title;
+        svg("text", { x: X(0) - 6, y: oy + 32, class: "ac-flip-head reg", "text-anchor": "end" }, s).textContent = "regressions";
+        svg("text", { x: X(0) + 6, y: oy + 32, class: "ac-flip-head cor", "text-anchor": "start" }, s).textContent = "corrections";
+        (p.ticks || [-30, 0, 30]).forEach(function (v) {
+          svg("line", { x1: X(v), x2: X(v), y1: oy + top - 4, y2: oy + top + rowH * n, class: "ac-grid" }, s);
+          svg("text", { x: X(v), y: oy + top + rowH * n + 16, class: "ac-ytick", "text-anchor": "middle" }, s).textContent = Math.abs(v);
+        });
+        svg("line", { x1: X(0), x2: X(0), y1: oy + 22, y2: oy + top + rowH * n, class: "ac-flip-zero" }, s);
+        cfg.models.forEach(function (k, i) {
+          var y = oy + top + rowH * i,
+            r = p.rows[k],
+            g = svg("g", { class: "ac-db-row" }, s);
+          svg("rect", { x: ox, y: y, width: pw, height: rowH, fill: "transparent" }, g);
+          if (!r) {
+            svg("text", { x: X(0) + 6, y: y + rowH / 2 + 4, class: "ac-flip-na" }, g).textContent = p.missing || "not run";
+            return;
+          }
+          var bh = rowH - 8,
+            ow = open.indexOf(k) >= 0;
+          svg("rect", { x: X(-r[0]), y: y + 4, width: X(0) - X(-r[0]), height: bh, class: "ac-flip-reg" + (ow ? " open" : "") }, g);
+          svg("rect", { x: X(0), y: y + 4, width: X(r[1]) - X(0), height: bh, class: "ac-flip-cor" }, g);
+          svg("text", { x: X(-r[0]) - 4, y: y + rowH / 2 + 4, class: "ac-flip-val reg", "text-anchor": "end" }, g).textContent = fmt(r[0]);
+          svg("text", { x: X(r[1]) + 4, y: y + rowH / 2 + 4, class: "ac-flip-val cor" }, g).textContent = fmt(r[1]);
+          g.addEventListener("mousemove", function () {
+            placeTip(
+              ctx,
+              X(r[1]),
+              y - 6,
+              '<div class="ac-tip-h">' +
+                name(k) +
+                " &middot; " +
+                p.title +
+                '</div><div class="ac-row">Right &rarr; wrong (regressions)<b>' +
+                fmt(r[0]) +
+                '%</b></div><div class="ac-row">Wrong &rarr; right (corrections)<b>' +
+                fmt(r[1]) +
+                "%</b></div>"
+            );
+          });
+          g.addEventListener("mouseleave", function () {
+            tip.style.display = "none";
+          });
+        });
+      });
+      // axis caption: one line when wide, split near the middle on narrow screens
+      var xt = cfg.xTitle || "",
+        cx = wide ? labW + (W - labW) / 2 : W / 2,
+        cut = wide ? -1 : xt.indexOf(" ", Math.floor(xt.length / 2));
+      var tt = svg("text", { x: cx, y: wide ? H - 4 : H - 18, class: "ac-xtitle", "text-anchor": "middle" }, s);
+      (cut > 0 ? [xt.slice(0, cut), xt.slice(cut + 1)] : [xt]).forEach(function (part, j) {
+        svg("tspan", { x: cx, dy: j ? 14 : 0 }, tt).textContent = part;
+      });
+    }
+    legend.innerHTML =
+      '<span class="ac-key"><span class="ac-flip-key reg"></span>regressions (closed models)</span>' +
+      '<span class="ac-key"><span class="ac-flip-key reg open"></span>regressions (open-weight models)</span>' +
+      '<span class="ac-key"><span class="ac-flip-key cor"></span>corrections</span>';
+    var w = root.clientWidth;
+    window.addEventListener("resize", function () {
+      if (Math.abs(root.clientWidth - w) > 20) {
+        w = root.clientWidth;
+        render();
+      }
+    });
+    render();
+  }
+
   /* ---------- image tabs (e.g. success vs fail frames per task) ---------- */
   function imageTabs(id) {
     var root = document.getElementById(id);
@@ -541,5 +733,5 @@
     show(0);
   }
 
-  window.AproCharts = { line: line, dumbbell: dumbbell, imageTabs: imageTabs };
+  window.AproCharts = { line: line, dumbbell: dumbbell, flips: flips, imageTabs: imageTabs };
 })();
