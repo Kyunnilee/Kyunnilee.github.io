@@ -1,3 +1,8 @@
+/* APRO post font: Google Sans (loaded in the post), only this post loads apro.css */
+.post {
+  font-family: "Google Sans", "Roboto", system-ui, sans-serif;
+}
+
 :root {
   /* site daylight theme colour ($cyan-color in _sass/_variables.scss) */
   --apro-accent: #2698ba;
