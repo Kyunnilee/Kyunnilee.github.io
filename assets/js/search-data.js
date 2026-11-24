@@ -34,7 +34,7 @@ ninja.data = [{
         
           title: "Measuring Agentic Physical Reasoning",
         
-        description: "What I worked on for the first 3 month of PhD. Generate a evaluation suite for VLM as agents to control robots. Tests whether VLMs can turn what they understand about physics into robot actions that actually succeed.",
+        description: "Given the right physical information, VLMs can solve the task. Can they gather that information through their own actions?",
         section: "Posts",
         handler: () => {
           
