@@ -29,10 +29,12 @@ We aim to simplify the process of planning trips and transport for important tri
 DayGenie is constructed as a decentralized multi-agent large language model. We defined 5 LLM Agents (InfoAgent, MapAgent, RedditAgent, SummaryAgent, FeedbackAgent), each with specific prompting for their purpose.
 
 **Input:**
+
 - User preferences (text input)
 - Google Calendar schedule (via Google Calendar API)
 
 **Agent Pipeline:**
+
 - **InfoAgent:** Fetches user input and generates prompts for MapAgent and RedditAgent.
 - **MapAgent:** Finds the location of events from calendar input.
 - **RedditAgent:** Calls Reddit API to fetch and analyze reviews based on key inputs.

@@ -10,7 +10,6 @@ related_publications: false
 
 ## SPATIAL PERCEPTION AND REASONING BENCHMARK (SPARK): A SCAVENGER HUNT GAME FOR LLM AGENTS
 
-
 🔥 This project is the winner of [LLM Agents](https://rdi.berkeley.edu/llm-agents-hackathon/), 3rd place in Benchmark Track. Take a look at our project below.
 
 [Paper](https://github.com/Kyunnilee/llm_scavengerhunt/blob/main/paper/194_Scavenger_Hunt_Submission.pdf) | [Extended Abstract](https://github.com/Kyunnilee/llm_scavengerhunt/blob/main/paper/Extended_Abstract.pdf) | [Video](https://drive.google.com/drive/folders/1I0CfSKPIilZk__pB_aDKOydfYclBj1Wo) | [Slides](https://drive.google.com/drive/folders/1I0CfSKPIilZk__pB_aDKOydfYclBj1Wo)
@@ -19,7 +18,7 @@ related_publications: false
 
 ### Abstract
 
-*We propose a novel open-source testing framework and benchmark in the field of Vision-Language Navigation (VLN) to evaluate the goal-seeking capabilities of Large Language Model (LLM) agents in real-world environments. To this end, we designed a QA agent that operates without relying on human supervision or data annotations, serving as a semantic heuristic function to provide navigational cues to the agent under evaluation. Additionally, we leveraged techniques such as Reinforcement Learning with AI Feedback (RLAIF) to develop new metrics for detailed analysis of the agent’s progressive information acquisition, multimodal cross-inference, and spatial reasoning abilities. Experimental results demonstrate significant room for improvement in current LLM agents across these dimensions. Future work may explore enhancing LLMs’ visual perception capabilities and their alignment of spatial information with semantic understanding.*
+_We propose a novel open-source testing framework and benchmark in the field of Vision-Language Navigation (VLN) to evaluate the goal-seeking capabilities of Large Language Model (LLM) agents in real-world environments. To this end, we designed a QA agent that operates without relying on human supervision or data annotations, serving as a semantic heuristic function to provide navigational cues to the agent under evaluation. Additionally, we leveraged techniques such as Reinforcement Learning with AI Feedback (RLAIF) to develop new metrics for detailed analysis of the agent’s progressive information acquisition, multimodal cross-inference, and spatial reasoning abilities. Experimental results demonstrate significant room for improvement in current LLM agents across these dimensions. Future work may explore enhancing LLMs’ visual perception capabilities and their alignment of spatial information with semantic understanding._
 
 ---
 
@@ -32,6 +31,7 @@ You can verify your environment by running the setup check script:
 ---
 
 **Command:**
+
 ```
 python check_setup.py
 ```
@@ -48,7 +48,7 @@ The dataset is consisted of two parts: map and task.
 
 We follow previous works and used the `touchdown` version dataset to express the map.
 
-The dataset is consisted of `nodes.txt` and `links.txt`. 
+The dataset is consisted of `nodes.txt` and `links.txt`.
 
 These files will describe the graph as $(V, E)$ where $V$ are vertices and $E$ are edges.
 
@@ -66,8 +66,8 @@ You should have your dataset path written in `config/map/<your_map_selection>.js
 
 ```json
 {
-    "node": "dataset/nodes.txt",
-    "link": "dataset/links.txt"
+  "node": "dataset/nodes.txt",
+  "link": "dataset/links.txt"
 }
 ```
 
@@ -86,14 +86,19 @@ Tasks are usually generated on different levels: easy, medium and hard. They mai
 All the config files can be found in `config/`. An example is provided in `main.sh`.
 
 ---
+
 **Command:**
+
 ```
 python navigator.py --help/-h
 ```
+
 ---
 
 ---
+
 **Command:**
+
 ```
 python navigator.py --navi=<your_navi_config>.json \
                     --map=<touchdown_format_map>.json \
@@ -101,6 +106,7 @@ python navigator.py --navi=<your_navi_config>.json \
                     --task=<your_task>.json \
                     --vision=<vision_input_mode_for_agents>.json \
 ```
+
 ---
 
 ### Run Single Experiment (With web visualization)
@@ -108,10 +114,13 @@ python navigator.py --navi=<your_navi_config>.json \
 You can run the following python file.
 
 ---
+
 **Command:**
+
 ```
 python run_single_vis.py
 ```
+
 ---
 
 And you will see a web visualization of the testing process.
@@ -123,21 +132,27 @@ And you will see a web visualization of the testing process.
 `run_batch.py` is a version where you can define your task queue and run them all.
 
 ---
+
 **Command:**
+
 ```
 python run_batch.py
 ```
+
 ---
 
 ### Run Evaluation
 
-Change the `log_folder` and `task_folder` in the `evaluator.py` to your version. 
+Change the `log_folder` and `task_folder` in the `evaluator.py` to your version.
 
 This script will automatically find all `.json` logs, evaluate them and aggregate the results.
 
 ---
+
 **Command:**
+
 ```
 python evaluator.py
 ```
+
 ---
