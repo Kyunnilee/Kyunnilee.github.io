@@ -54,6 +54,11 @@ html[data-theme="dark"] .post-content {
   font-weight: 700;
   color: var(--apro-accent-text);
 }
+/* bold text in the post body uses the main colour */
+.post-content b,
+.post-content strong {
+  color: var(--apro-accent-text);
+}
 .apro-authors {
   color: var(--global-text-color-light);
   margin: -0.25rem 0 1.25rem;
@@ -381,15 +386,26 @@ table.results tr.mean td {
     padding-left: 40px;
   }
 }
-/* Regimes figure reaches past the text column to ~24px from the window edge. */
+/* Regimes figure spans almost the whole window (2vw gap each side, max 1800px),
+   centred on the window, drawn over the sticky TOC (z 1020) but under the navbar (z 1030).
+   margin-left = (window centre - half the figure) - text column's left edge, where the
+   left edge is 50vw - 198.75px - shift (1000-1199px) or 50vw - 325px - shift (>= 1200px). */
+@media (min-width: 1000px) {
+  .regime-fig {
+    --rf-w: min(1800px, calc(100vw - 2 * max(16px, 2vw)));
+    width: var(--rf-w);
+    position: relative;
+    z-index: 1025;
+  }
+}
 @media (min-width: 1000px) and (max-width: 1199.98px) {
   .regime-fig {
-    width: min(1150px, calc(50vw + 193px + var(--apro-shift, 0px)));
+    margin-left: calc(198.75px + var(--apro-shift, 0px) - var(--rf-w) / 2);
   }
 }
 @media (min-width: 1200px) {
   .regime-fig {
-    width: min(1400px, calc(50vw + 301px + var(--apro-shift, 0px)));
+    margin-left: calc(325px + var(--apro-shift, 0px) - var(--rf-w) / 2);
   }
 }
 .dataset-fig {
@@ -476,6 +492,10 @@ html[data-theme="dark"] .finding {
 }
 .finding li b {
   font-weight: 600;
+}
+.post-content .finding b,
+.post-content .finding strong {
+  color: var(--finding-blue);
 }
 .fig-card {
   border: 1px solid var(--apro-rule);
