@@ -1,4 +1,7 @@
-/* APRO post font: Google Sans (loaded in the post), only this post loads apro.css */
+/* Google Sans for this post, loaded here so the post file itself does not need the link */
+@import url("https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;500;700&display=swap");
+
+/* APRO post font (only this post loads apro.css) */
 .post {
   font-family: "Google Sans", "Roboto", system-ui, sans-serif;
 }
@@ -37,11 +40,13 @@ html[data-theme="dark"] .post-content {
   color: var(--apro-heading);
   border-bottom: 2px solid var(--apro-accent-bg);
   padding-bottom: 0.35rem;
-  margin-top: 2.5rem;
+  margin-top: 3.75rem;
+  font-weight: 700;
 }
 .post-content h3 {
   color: var(--apro-heading);
-  margin-top: 1.75rem;
+  margin-top: 2.25rem;
+  font-weight: 700;
 }
 .tldr {
   border: 2px solid var(--apro-accent);
