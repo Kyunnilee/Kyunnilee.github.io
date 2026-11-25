@@ -356,12 +356,17 @@
               oracleArrow(g, st.key, X(i), base, v, X(lastIx) + 20 + gj * 11);
               return;
             }
+            // several stars at one k: spread them sideways so each stays visible
+            var same = p.stars.filter(function (o) {
+                return o.at[ix] !== undefined;
+              }),
+              xs = X(i) + (same.length > 2 ? (same.indexOf(st) - (same.length - 1) / 2) * 7 : 0);
             if (base !== null && base !== undefined && Math.abs(base - v) > 1) {
               svg(
                 "line",
                 {
-                  x1: X(i),
-                  x2: X(i),
+                  x1: xs,
+                  x2: xs,
                   y1: Y(base),
                   y2: Y(v),
                   stroke: color(st.key),
@@ -372,7 +377,7 @@
                 g
               );
             }
-            svg("path", { d: starPath(X(i), Y(v), 9), fill: color(st.key), stroke: "var(--ac-surface)", "stroke-width": 1.4, class: "ac-star" }, g);
+            svg("path", { d: starPath(xs, Y(v), 9), fill: color(st.key), stroke: "var(--ac-surface)", "stroke-width": 1.4, class: "ac-star" }, g);
           });
         });
       }
@@ -410,9 +415,10 @@
         div(
           "ac-legend-note",
           ctx.legend,
-          gutter.length
-            ? "&#9733; oracle setting; arrows show the change at k = " + n + ", stars at k = 1 the oracle first try"
-            : "&#9733; oracle setting (k = 1 and k = " + n + ")"
+          p.starNote ||
+            (gutter.length
+              ? "&#9733; oracle setting; arrows show the change at k = " + n + ", stars at k = 1 the oracle first try"
+              : "&#9733; oracle setting (k = 1 and k = " + n + ")")
         );
         var last = n - 1,
           items = [];
@@ -445,7 +451,10 @@
               ")</b></span>"
           );
         });
-        ctx.note.innerHTML = '<div class="ac-star-sums">At k = ' + n + ", without &rarr; with oracle: " + items.join("") + "</div>" + (p.note || "");
+        if (items.length) {
+          ctx.note.innerHTML =
+            '<div class="ac-star-sums">At k = ' + n + ", without &rarr; with oracle: " + items.join("") + "</div>" + (p.note || "");
+        }
       }
       // hover crosshair
       var cross = svg("line", { y1: m.t, y2: m.t + ih, class: "ac-cross", visibility: "hidden" }, s);

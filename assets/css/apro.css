@@ -3,6 +3,11 @@
   font-family: "Google Sans", "Roboto", system-ui, sans-serif;
 }
 
+/* this post only: page width 2 cm (~76 px) narrower than the site's 930 px */
+.container {
+  max-width: 855px;
+}
+
 :root {
   /* site daylight theme colour ($cyan-color in _sass/_variables.scss) */
   --apro-accent: #2698ba;
