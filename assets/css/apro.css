@@ -11,6 +11,27 @@
   max-width: 855px;
 }
 
+/* this post only: slide the TOC sidebar + post column left so the title starts
+   under the navbar name. --apro-shift is the gap between the two, capped by the
+   free left margin (TOC keeps >= ~30px from the window edge), so narrower windows
+   get a partial shift. Off once the sidebar stacks on top (< 576px).
+   576-1199px: 855px container, gap = one 25% sidebar column = 213.75px.
+   >= 1200px: 1240px container (wide layout below), gap = 80.5px. */
+@media (min-width: 576px) {
+  :root {
+    --apro-shift: max(0px, min(213.75px, (100vw - 855px) / 2 - 24px));
+  }
+  .container[role="main"] > .row {
+    position: relative;
+    left: calc(-1 * var(--apro-shift));
+  }
+}
+@media (min-width: 1200px) {
+  :root {
+    --apro-shift: max(0px, min(80.5px, (100vw - 1240px) / 2 - 24px));
+  }
+}
+
 :root {
   /* site daylight theme colour ($cyan-color in _sass/_variables.scss) */
   --apro-accent: #2698ba;
@@ -362,12 +383,12 @@ table.results tr.mean td {
 /* Regimes figure reaches past the text column to ~24px from the window edge (max 1150px). */
 @media (min-width: 1000px) and (max-width: 1199.98px) {
   .regime-fig {
-    width: min(1150px, calc(50vw + 193px));
+    width: min(1150px, calc(50vw + 193px + var(--apro-shift, 0px)));
   }
 }
 @media (min-width: 1240px) {
   .regime-fig {
-    width: min(1150px, calc(50vw + 308px));
+    width: min(1150px, calc(50vw + 308px + var(--apro-shift, 0px)));
   }
 }
 .dataset-fig {
