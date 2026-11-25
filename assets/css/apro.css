@@ -11,12 +11,13 @@
   max-width: 855px;
 }
 
-/* this post only: slide the TOC sidebar + post column left so the title starts
-   under the navbar name. --apro-shift is the gap between the two, capped by the
-   free left margin (TOC keeps >= ~30px from the window edge), so narrower windows
-   get a partial shift. Off once the sidebar stacks on top (< 576px).
-   576-1199px: 855px container, gap = one 25% sidebar column = 213.75px.
-   >= 1200px: 1240px container (wide layout below), gap = 80.5px. */
+/* this post only: slide the TOC sidebar + post column left. --apro-shift is capped
+   by the free left margin (TOC keeps >= ~24px from the window edge), so narrower
+   windows get a partial shift. Off once the sidebar stacks on top (< 576px).
+   576-1199px: 855px container, full shift = one 25% sidebar column = 213.75px
+   (title starts under the navbar name).
+   >= 1200px: 1130px container (200px TOC + 900px text column, wide layout below),
+   full shift = 147.5px (title starts 60px left of the navbar name). */
 @media (min-width: 576px) {
   :root {
     --apro-shift: max(0px, min(213.75px, (100vw - 855px) / 2 - 24px));
@@ -28,7 +29,7 @@
 }
 @media (min-width: 1200px) {
   :root {
-    --apro-shift: max(0px, min(80.5px, (100vw - 1240px) / 2 - 24px));
+    --apro-shift: max(0px, min(147.5px, (100vw - 1130px) / 2 - 17px));
   }
 }
 
@@ -365,30 +366,30 @@ table.results tr.mean td {
   padding: 4px;
   margin: 1rem 0 0.25rem;
 }
-/* Wider page on big screens: TOC column narrower and further left, text column wider. */
+/* Big screens: fixed 200px TOC column + 900px text column (~845px of text). */
 @media (min-width: 1200px) {
   .container[role="main"] {
-    max-width: 1240px;
+    max-width: 1130px;
   }
   .container[role="main"] > .row > .col-sm-3 {
-    flex: 0 0 20%;
-    max-width: 20%;
+    flex: 0 0 200px;
+    max-width: 200px;
   }
   .container[role="main"] > .row > .col-sm-9 {
-    flex: 0 0 80%;
-    max-width: 80%;
+    flex: 0 0 900px;
+    max-width: 900px;
     padding-left: 40px;
   }
 }
-/* Regimes figure reaches past the text column to ~24px from the window edge (max 1150px). */
+/* Regimes figure reaches past the text column to ~24px from the window edge. */
 @media (min-width: 1000px) and (max-width: 1199.98px) {
   .regime-fig {
     width: min(1150px, calc(50vw + 193px + var(--apro-shift, 0px)));
   }
 }
-@media (min-width: 1240px) {
+@media (min-width: 1200px) {
   .regime-fig {
-    width: min(1150px, calc(50vw + 308px + var(--apro-shift, 0px)));
+    width: min(1400px, calc(50vw + 301px + var(--apro-shift, 0px)));
   }
 }
 .dataset-fig {
@@ -1061,12 +1062,34 @@ table.io-steps td:nth-child(2) {
 }
 
 /* ---------- References (generated from the paper's cited main.bib entries) ---------- */
-.apro-cite {
-  font-size: 0.85em;
+/* inline citations: superscript numbers like footnote markers */
+sup.apro-cite {
+  font-size: 0.7em;
+  font-weight: 400;
+  line-height: 0;
+  margin-left: 1px;
   white-space: nowrap;
 }
 .apro-cite a {
   color: var(--apro-accent-text);
+  text-decoration: none;
+}
+.apro-cite a:hover {
+  text-decoration: underline;
+}
+/* keep jump targets clear of the fixed navbar */
+sup.apro-cite,
+.apro-refs li {
+  scroll-margin-top: 80px;
+}
+sup.apro-cite:target {
+  background: var(--apro-accent-bg);
+  border-radius: 3px;
+}
+.apro-refs a.apro-back {
+  color: var(--apro-accent-text);
+  text-decoration: none;
+  margin-left: 2px;
 }
 .apro-refs {
   font-size: 13.5px;
