@@ -386,28 +386,6 @@ table.results tr.mean td {
     padding-left: 40px;
   }
 }
-/* Regimes figure spans almost the whole window (2vw gap each side, max 1800px),
-   centred on the window, drawn over the sticky TOC (z 1020) but under the navbar (z 1030).
-   margin-left = (window centre - half the figure) - text column's left edge, where the
-   left edge is 50vw - 198.75px - shift (1000-1199px) or 50vw - 325px - shift (>= 1200px). */
-@media (min-width: 1000px) {
-  .regime-fig {
-    --rf-w: min(1800px, calc(100vw - 2 * max(16px, 2vw)));
-    width: var(--rf-w);
-    position: relative;
-    z-index: 1025;
-  }
-}
-@media (min-width: 1000px) and (max-width: 1199.98px) {
-  .regime-fig {
-    margin-left: calc(198.75px + var(--apro-shift, 0px) - var(--rf-w) / 2);
-  }
-}
-@media (min-width: 1200px) {
-  .regime-fig {
-    margin-left: calc(325px + var(--apro-shift, 0px) - var(--rf-w) / 2);
-  }
-}
 .dataset-fig {
   display: block;
   width: 100%;
