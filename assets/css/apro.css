@@ -1059,3 +1059,31 @@ table.io-steps td:nth-child(2) {
   font-size: 13px;
   flex: none;
 }
+
+/* ---------- References (generated from the paper's cited main.bib entries) ---------- */
+.apro-cite {
+  font-size: 0.85em;
+  white-space: nowrap;
+}
+.apro-cite a {
+  color: var(--apro-accent-text);
+}
+.apro-refs {
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: var(--global-text-color-light);
+  padding-left: 2rem;
+}
+.apro-refs li {
+  margin: 0.35rem 0;
+  padding-left: 0.25rem;
+  color: var(--global-text-color-light);
+  overflow-wrap: anywhere;
+}
+.apro-refs li:target {
+  background: var(--apro-accent-bg);
+  border-radius: 4px;
+}
+.apro-refs a {
+  color: var(--global-text-color);
+}
